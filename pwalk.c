@@ -88,11 +88,7 @@ csv_escape(char *in, char *out)
    while ( *in ) {
       if ( *in == '"' || *in == ',' || *in == '\\')
          *out++ = '\\';
-      if ( *in < 32 ) {
-         in++;
-         cnt++;
-      } else
-         *out++ = *in++;
+      *out++ = *in++;
    *out = '\0';
    }
    if ( cnt )
